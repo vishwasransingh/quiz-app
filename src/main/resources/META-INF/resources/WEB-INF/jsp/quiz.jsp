@@ -1,14 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sample Quiz</title>
-    <link href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"/>
-</head>
-<body>
+<%@ include file="common/header.jspf" %>
 
-<div class="container mt-5">
     <h1 class="mb-4">Sample Quiz</h1>
     <hr>
 
@@ -38,10 +29,6 @@
 
         <button type="submit" class="btn btn-primary">Submit Test</button>
     </form>
-</div>
 
-<script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
-<script src="/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<%@ include file="common/footer.jspf" %>
 
-</body>
-</html>

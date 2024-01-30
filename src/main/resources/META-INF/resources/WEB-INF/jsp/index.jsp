@@ -1,15 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Home</title>
-</head>
-<body>
+<%@ include file="common/header.jspf" %>
 
 	<h1>Quiz-Application Home</h1>
 	<hr>
+	
+	<button type="button" class="btn btn-success">Sample Test</button>
 
-</body>
-</html>
+<%@ include file="common/footer.jspf" %>

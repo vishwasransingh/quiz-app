@@ -21,7 +21,7 @@ import com.quizapp.service.QuizService;
 public class QuizController {
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
-	
+
 	private static List<Question> currentQuizList;
 	
 	@Autowired
@@ -33,13 +33,13 @@ public class QuizController {
 	}
 	
 	@GetMapping("/get-quiz")
-	public String goToQuizPage(@RequestParam String subject, @RequestParam String testDifficulty, Model model) {
+	public String goToQuizPage(@RequestParam("subject") String quizSubject, @RequestParam("testDifficulty") String quizDifficulty, Model model) {
 		
-		LOGGER.info(subject + "   " + testDifficulty);
+		LOGGER.info(quizSubject + "   " + quizDifficulty);
 		
-		currentQuizList = quizService.getQuiz(subject);
+		currentQuizList = quizService.getQuiz(quizSubject);
 
-		model.addAttribute("testName", subject);
+		model.addAttribute("testName", quizSubject);
 		model.addAttribute("quizList", currentQuizList);
 	
 		return "quiz";

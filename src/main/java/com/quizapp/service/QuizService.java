@@ -34,7 +34,7 @@ public class QuizService {
 		try {
             ObjectMapper objectMapper = new ObjectMapper();
             
-            Resource resource = new ClassPathResource("files/tests/" + quizName + ".json");
+            Resource resource = new ClassPathResource(quizConfig.getQuizFilePath() + quizName + ".json");
             InputStream inputStream = resource.getInputStream();
 
             return objectMapper.readValue(inputStream, new TypeReference<List<Question>>() {});

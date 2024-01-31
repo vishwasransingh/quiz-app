@@ -22,19 +22,21 @@ import com.quizapp.model.TestResult;
 @Service
 public class QuizService {
 	
-	private static String currentTestName;
+	private static String currentQuizName;
+	
+	private static List<String> currentQuizList;
 	
 	@Autowired
 	QuizConfig quizConfig;
 	
-	public List<Question> getQuiz(String testName) {
-		currentTestName = testName;
+	public List<Question> getQuiz(String quizName) {
+		currentQuizName = quizName;
 		try {
             ObjectMapper objectMapper = new ObjectMapper();
             
-            Resource resource = new ClassPathResource("files/" + testName + ".json");
+            Resource resource = new ClassPathResource("files/tests/" + quizName + ".json");
             InputStream inputStream = resource.getInputStream();
-            
+
             return objectMapper.readValue(inputStream, new TypeReference<List<Question>>() {});
         } catch (IOException e) {
             // Handle exceptions (cases : file not found, invalid JSON)
@@ -72,13 +74,12 @@ public class QuizService {
 		result.setTotalQuestions(correctAnswers.size());
 		result.setCorrectAnswers(countCorrect);
 		result.setPercentageScore(countAttempted * 100 / correctAnswers.size());
-		
 		return result;
 	}
 
 	private List<String> getAnswers() {
 		List<String> correctAnswers = new ArrayList<>();
-		getQuiz(currentTestName).stream().forEach( question -> correctAnswers.add(question.getAnswer()));
+		getQuiz(currentQuizName).stream().forEach( question -> correctAnswers.add(question.getAnswer()));
 		return correctAnswers;
 	}
 }

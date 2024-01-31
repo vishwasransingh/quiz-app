@@ -1,0 +1,249 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "options": ["Berlin", "Paris", "Madrid", "Rome"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Who is the president of the United States?",
+    "options": ["Joe Biden", "Donald Trump", "Barack Obama", "George Washington"],
+    "answer": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the largest mammal on Earth?",
+    "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In which year did the Titanic sink?",
+    "options": ["1910", "1912", "1920", "1930"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the capital of Japan?",
+    "options": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+    "answer": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which planet is known as the 'Red Planet'?",
+    "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the currency of Brazil?",
+    "options": ["Euro", "Yen", "Dollar", "Real"],
+    "answer": "D",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Who discovered penicillin?",
+    "options": ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Jonas Salk"],
+    "answer": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which element has the chemical symbol 'O'?",
+    "options": ["Oxygen", "Osmium", "Oganesson", "Oberon"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the largest desert in the world?",
+    "options": ["Gobi Desert", "Sahara Desert", "Arabian Desert", "Antarctica"],
+    "answer": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Who developed the theory of relativity?",
+    "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+    "answer": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the speed of light?",
+    "options": ["300,000 km/s", "500,000 km/s", "700,000 km/s", "900,000 km/s"],
+    "answer": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which is the longest river in the world?",
+    "options": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+    "answer": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
+    "answer": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which gas makes up the majority of Earth's atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+    "answer": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Who wrote 'To Kill a Mockingbird'?",
+    "options": ["Harper Lee", "Ernest Hemingway", "F. Scott Fitzgerald", "J.K. Rowling"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the smallest prime number?",
+    "options": ["1", "2", "3", "5"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In which year did World War II end?",
+    "options": ["1943", "1945", "1950", "1939"],
+    "answer": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "options": ["Au", "Ag", "Fe", "Cu"],
+    "answer": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Who wrote '1984'?",
+    "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which planet is known as the 'Morning Star'?",
+    "options": ["Venus", "Mars", "Mercury", "Jupiter"],
+    "answer": "C",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the powerhouse of the cell?",
+    "options": ["Mitochondria", "Nucleus", "Endoplasmic Reticulum", "Golgi Apparatus"],
+    "answer": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Who is the author of 'The Great Gatsby'?",
+    "options": ["F. Scott Fitzgerald", "Ernest Hemingway", "Jane Austen", "Charles Dickens"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the boiling point of water in Celsius?",
+    "options": ["100°C", "0°C", "50°C", "-50°C"],
+    "answer": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which country is known as the 'Land of the Rising Sun'?",
+    "options": ["China", "South Korea", "Japan", "Vietnam"],
+    "answer": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Who is known as the 'Father of Computers'?",
+    "options": ["Alan Turing", "Charles Babbage", "Ada Lovelace", "John von Neumann"],
+    "answer": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which ocean is the largest?",
+    "options": ["Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Pacific Ocean"],
+    "answer": "D",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the capital of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    "answer": "C",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Who painted the 'Starry Night'?",
+    "options": ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dalí"],
+    "answer": "B",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the speed of sound in air?",
+    "options": ["340 m/s", "1500 m/s", "2200 m/s", "1000 m/s"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which metal is liquid at room temperature?",
+    "options": ["Gold", "Mercury", "Aluminum", "Copper"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the main ingredient in guacamole?",
+    "options": ["Tomato", "Avocado", "Onion", "Lime"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Who was the first woman to win a Nobel Prize?",
+    "options": ["Marie Curie", "Rosalind Franklin", "Dorothy Crowfoot Hodgkin", "Barbara McClintock"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which language is widely spoken in Brazil?",
+    "options": ["Spanish", "Portuguese", "Italian", "French"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the smallest prime number?",
+    "options": ["1", "2", "3", "5"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Who developed the theory of evolution?",
+    "options": ["Charles Darwin", "Alfred Russel Wallace", "Gregor Mendel", "Jean-Baptiste Lamarck"],
+    "answer": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Jupiter", "Saturn", "Neptune", "Earth"],
+    "answer": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In which year did the Berlin Wall fall?",
+    "options": ["1985", "1989", "1991", "1995"],
+    "answer": "B",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Who is the author of 'The Catcher in the Rye'?",
+    "options": ["J.D. Salinger", "F. Scott Fitzgerald", "Ernest Hemingway", "Mark Twain"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the process of a liquid turning into a gas?",
+    "options": ["Condensation", "Evaporation", "Sublimation", "Melting"],
+    "answer": "B",
+    "difficulty": "Easy"
+  }
+]
+

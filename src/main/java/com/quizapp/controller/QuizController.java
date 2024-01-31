@@ -2,10 +2,11 @@ package com.quizapp.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,10 @@ import com.quizapp.service.QuizService;
 @Controller
 public class QuizController {
 	
+	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+	
+	private static List<Question> currentQuizList;
+	
 	@Autowired
 	QuizService quizService;
 	
@@ -28,12 +33,14 @@ public class QuizController {
 	}
 	
 	@GetMapping("/get-quiz")
-	public String goToQuizPage(@RequestParam String testName, Model model) {
+	public String goToQuizPage(@RequestParam String subject, @RequestParam String testDifficulty, Model model) {
 		
-		List<Question> quizList = quizService.getQuiz(testName);
+		LOGGER.info(subject + "   " + testDifficulty);
+		
+		currentQuizList = quizService.getQuiz(subject);
 
-		model.addAttribute("testName", testName);
-		model.addAttribute("quizList", quizList);
+		model.addAttribute("testName", subject);
+		model.addAttribute("quizList", currentQuizList);
 	
 		return "quiz";
 	}

@@ -4,19 +4,22 @@
 <hr>
 
 <form action="/get-quiz" method="get">
-    <button type="submit" class="btn btn-success mt-3" name="testName" value="GK_Test_1">Sample Test1</button>
-</form>
+    <label for="subject">Select Subject:</label>
+    <select name="subject" id="subject" class="form-select mt-3" required>
+        <option value="GK_Test">General Knowledge</option>
+        <option value="sampleTest2">Sample Test2</option>
+        <option value="sampleTest3">Sample Test3</option>
+        <option value="sampleTest4">Sample Test4</option>
+    </select>
 
-<form action="/get-quiz" method="get">
-    <button type="submit" class="btn btn-warning mt-3" name="testName" value="sampleTest2">Sample Test2</button>
-</form>
+    <label for="testDifficulty">Select Difficulty:</label>
+    <select name="testDifficulty" id="testDifficulty" class="form-select mt-3" required>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
 
-<form action="/get-quiz" method="get">
-    <button type="submit" class="btn btn-warning mt-3" name="testName" value="sampleTest3">Sample Test3</button>
-</form>
-
-<form action="/get-quiz" method="get">
-    <button type="submit" class="btn btn-warning mt-3" name="testName" value="sampleTest4">Sample Test4</button>
+    <button type="submit" class="btn btn-success mt-3">Start Quiz</button>
 </form>
 
 <%@ include file="common/footer.jspf" %>

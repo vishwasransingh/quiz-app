@@ -67,78 +67,6 @@ public class QuizService {
 	        return Collections.emptyList();
 	    }
 	}
-
-
-//	public TestResult calculateResult(QuizForm quizForm) {
-//		List<String> selectedAnswers = quizForm.getAnswers();
-//		List<String> correctAnswers = getAnswersForCurrentQuiz();
-//		
-//		if (selectedAnswers == null) {
-//			return new TestResult();
-//		}
-//		
-//		int countCorrect = 0;
-//		int countAttempted = 0;
-//		
-//		Iterator<String> iterator1 = selectedAnswers.iterator();
-//		Iterator<String> iterator2 = correctAnswers.iterator();
-//		
-//		while( iterator1.hasNext() &&  iterator2.hasNext()){
-//			String selectedAnswer = iterator1.next();
-//			String correctAnswer = iterator2.next();
-//			if (selectedAnswer != null) {
-//				++ countAttempted;
-//				if (selectedAnswer.equals(correctAnswer))
-//					++ countCorrect;
-//			}
-//		}
-//
-//		TestResult result = new TestResult();
-//		result.setAttemptedQuestions(countAttempted);
-//		result.setTotalQuestions(correctAnswers.size());
-//		result.setCorrectAnswers(countCorrect);
-//		result.setPercentageScore(countCorrect * 100 / correctAnswers.size());
-//		return result;
-//	}
-	
-//	public TestResult calculateResult(QuizForm quizForm) {
-//	    List<String> selectedAnswers = quizForm.getAnswers();
-//	    List<Question> correctQuestions = getQuestionsForCurrentQuiz();
-//
-//	    if (selectedAnswers == null) {
-//	        return new TestResult();
-//	    }
-//
-//	    int countCorrect = 0;
-//	    int countAttempted = 0;
-//	    List<Question> feedbackQuestions = new ArrayList<>();
-//
-//	    Iterator<String> iterator1 = selectedAnswers.iterator();
-//	    Iterator<Question> iterator2 = correctQuestions.iterator();
-//
-//	    while (iterator1.hasNext() && iterator2.hasNext()) {
-//	        String selectedAnswer = iterator1.next();
-//	        Question correctQuestion = iterator2.next();
-//
-//	        if (selectedAnswer != null) {
-//	            ++countAttempted;
-//	            if (selectedAnswer.equals(correctQuestion.getCorrectAnswer())) {
-//	                ++countCorrect;
-//	            } else {
-//	                feedbackQuestions.add(correctQuestion);
-//	            }
-//	        }
-//	    }
-//
-//	    TestResult result = new TestResult();
-//	    result.setAttemptedQuestions(countAttempted);
-//	    result.setTotalQuestions(correctQuestions.size());
-//	    result.setCorrectAnswers(countCorrect);
-//	    result.setPercentageScore(countCorrect * 100 / correctQuestions.size());
-//	    result.setFeedbackQuestions(feedbackQuestions);
-//
-//	    return result;
-//	}
 	
 	public TestResult calculateResult(QuizForm quizForm) {
 		
@@ -147,6 +75,9 @@ public class QuizService {
 		List<String> userSelectedAnswers = quizForm.getUserSelectedAnswers();
 		
 		if (userSelectedAnswers == null) {
+			
+			currentQuizList.stream().forEach(question -> question.setUserSelectedAnswer("No option was selected"));
+			
 			return new TestResult(0, currentQuizList.size(), 
 					0, 0, currentQuizList);
 		}
@@ -167,17 +98,26 @@ public class QuizService {
 					++countCorrect;
 				}
 				else {
+					if (userSelectedAnswer == null) {
+						currentQuestion.setUserSelectedAnswer("No option was selected.");
+						
+					}
+					
 					currentQuestion.setUserSelectedAnswer(userSelectedAnswer);
 					feedbackQuestions.add(currentQuestion);
 				}
 			}
 			else {
 				currentQuestion.setUserSelectedAnswer("No option was selected.");
+				feedbackQuestions.add(currentQuestion);
 			}
 		}
 		
-		return new TestResult(countAttempted, currentQuizList.size(), 
-				countCorrect, countCorrect * 100 / currentQuizList.size(), 
+		int totalQuestions = currentQuizList.size();
+		currentQuizList = null;
+		
+		return new TestResult(countAttempted, totalQuestions, 
+				countCorrect, countCorrect * 100 / totalQuestions, 
 				feedbackQuestions);
 	}
 

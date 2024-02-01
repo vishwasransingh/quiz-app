@@ -142,6 +142,8 @@ public class QuizService {
 	
 	public TestResult calculateResult(QuizForm quizForm) {
 		
+		List<Question> feedbackQuestions = new ArrayList<>();
+		
 		List<String> userSelectedAnswers = quizForm.getUserSelectedAnswers();
 		
 		if (userSelectedAnswers == null) {
@@ -157,15 +159,16 @@ public class QuizService {
 		
 		while (currentQuizIterator.hasNext()) {
 			Question currentQuestion = currentQuizIterator.next();
-			
+
 			if (userSelectedAnswersIterator.hasNext()) {
 				++countAttempted;
 				String userSelectedAnswer = userSelectedAnswersIterator.next();
-				if (userSelectedAnswer.equals(currentQuestion.getCorrectAnswer())) {
+				if (currentQuestion.getCorrectAnswer().equals(userSelectedAnswer)) {
 					++countCorrect;
 				}
 				else {
 					currentQuestion.setUserSelectedAnswer(userSelectedAnswer);
+					feedbackQuestions.add(currentQuestion);
 				}
 			}
 			else {
@@ -175,7 +178,7 @@ public class QuizService {
 		
 		return new TestResult(countAttempted, currentQuizList.size(), 
 				countCorrect, countCorrect * 100 / currentQuizList.size(), 
-				currentQuizList);
+				feedbackQuestions);
 	}
 
 }

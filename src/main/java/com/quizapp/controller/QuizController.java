@@ -33,11 +33,10 @@ public class QuizController {
 	}
 	
 	@GetMapping("/get-quiz")
-	public String goToQuizPage(@RequestParam("subject") String quizSubject, @RequestParam("testDifficulty") String quizDifficulty, Model model) {
+	public String goToQuizPage(@RequestParam("subject") String quizSubject, 
+			@RequestParam("testDifficulty") String quizDifficulty, Model model) {
 		
-		LOGGER.info(quizSubject + "   " + quizDifficulty);
-		
-		currentQuizList = quizService.getQuiz(quizSubject);
+		currentQuizList = quizService.getQuiz(quizSubject, quizDifficulty, 10);
 
 		model.addAttribute("testName", quizSubject);
 		model.addAttribute("quizList", currentQuizList);

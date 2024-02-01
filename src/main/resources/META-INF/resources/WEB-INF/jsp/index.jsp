@@ -18,6 +18,13 @@
         <option value="Medium">Medium</option>
         <option value="Hard">Hard</option>
     </select>
+    
+    <label for="">Select Test Size:</label>
+    <select name="numberOfQuestions" id="numberOfQuestions" class="form-select mt-3" required>
+        <option value="5">5 Questions</option>
+        <option value="10">10 Questions</option>
+        <option value="20">20 Questions</option>
+    </select>
 
     <button type="submit" class="btn btn-success mt-3">Start Quiz</button>
 </form>

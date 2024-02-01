@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -23,31 +24,51 @@ import com.quizapp.model.TestResult;
 public class QuizService {
 	
 	private static String currentQuizName;
-	
-	private static List<String> currentQuizList;
+	private static List<Question> currentQuizList;
+	private static String currentQuizDifficulty;
 	
 	@Autowired
 	QuizConfig quizConfig;
-	
-	public List<Question> getQuiz(String quizName) {
-		currentQuizName = quizName;
-		try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            
-            Resource resource = new ClassPathResource(quizConfig.getQuizFilePath() + quizName + ".json");
-            InputStream inputStream = resource.getInputStream();
 
-            return objectMapper.readValue(inputStream, new TypeReference<List<Question>>() {});
-        } catch (IOException e) {
-            // Handle exceptions (cases : file not found, invalid JSON)
-            e.printStackTrace();
-            return Collections.emptyList();
-        }
+	public List<Question> getQuiz(String quizName, String quizDifficulty, int numberOfQuestions) {
+		
+		currentQuizName = quizName;
+	    currentQuizDifficulty = quizDifficulty;
+
+	    try {
+	        ObjectMapper objectMapper = new ObjectMapper();
+
+	        Resource resource = new ClassPathResource(quizConfig.getQuizFilePath() + quizName + ".json");
+	        InputStream inputStream = resource.getInputStream();
+
+	        List<Question> allQuestions = objectMapper.readValue(inputStream, new TypeReference<List<Question>>() {});
+
+	        List<Question> filteredQuestions = allQuestions.stream()
+	                .filter(question -> question.getDifficulty().equals(quizDifficulty))
+	                .collect(Collectors.toList());
+
+	        // Shuffle the list of questions before limiting to the user-defined number
+	        Collections.shuffle(filteredQuestions);
+
+	        // Limit the questions to the user-defined number
+	        filteredQuestions = filteredQuestions.stream()
+	                .limit(numberOfQuestions)
+	                .collect(Collectors.toList());
+
+	        currentQuizList = filteredQuestions;
+
+	        return filteredQuestions;
+	    } catch (IOException e) {
+	        // Handle exceptions (cases: file not found, invalid JSON)
+	        e.printStackTrace();
+	        return Collections.emptyList();
+	    }
 	}
+
 
 	public TestResult calculateResult(QuizForm quizForm) {
 		List<String> selectedAnswers = quizForm.getAnswers();
-		List<String> correctAnswers = getAnswers();
+		List<String> correctAnswers = getAnswersForCurrentQuiz();
 		
 		if (selectedAnswers == null) {
 			return new TestResult();
@@ -73,13 +94,13 @@ public class QuizService {
 		result.setAttemptedQuestions(countAttempted);
 		result.setTotalQuestions(correctAnswers.size());
 		result.setCorrectAnswers(countCorrect);
-		result.setPercentageScore(countAttempted * 100 / correctAnswers.size());
+		result.setPercentageScore(countCorrect * 100 / correctAnswers.size());
 		return result;
 	}
 
-	private List<String> getAnswers() {
-		List<String> correctAnswers = new ArrayList<>();
-		getQuiz(currentQuizName).stream().forEach( question -> correctAnswers.add(question.getAnswer()));
+	private List<String> getAnswersForCurrentQuiz() {
+		List<String> correctAnswers = new ArrayList<>();		
+		currentQuizList.stream().forEach(question -> correctAnswers.add(question.getAnswer()));
 		return correctAnswers;
 	}
 }

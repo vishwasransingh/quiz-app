@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class QuizForm {
 	
-    private List<String> answers;
+    private List<String> userSelectedAnswers;
     
 }

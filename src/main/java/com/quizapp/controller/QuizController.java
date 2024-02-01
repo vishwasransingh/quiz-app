@@ -34,9 +34,10 @@ public class QuizController {
 	
 	@GetMapping("/get-quiz")
 	public String goToQuizPage(@RequestParam("subject") String quizSubject, 
-			@RequestParam("testDifficulty") String quizDifficulty, Model model) {
+			@RequestParam("testDifficulty") String quizDifficulty, Model model,
+			@RequestParam("numberOfQuestions") int numberOfQuestions) {
 		
-		currentQuizList = quizService.getQuiz(quizSubject, quizDifficulty, 10);
+		currentQuizList = quizService.getQuiz(quizSubject, quizDifficulty, numberOfQuestions);
 
 		model.addAttribute("testName", quizSubject);
 		model.addAttribute("quizList", currentQuizList);

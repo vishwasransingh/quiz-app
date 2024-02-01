@@ -1,249 +1,355 @@
 [
   {
+    "questionId": 1,
     "question": "What is the capital of France?",
     "options": ["Berlin", "Paris", "Madrid", "Rome"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 2,
     "question": "Who is the president of the United States?",
     "options": ["Joe Biden", "Donald Trump", "Barack Obama", "George Washington"],
     "answer": "A",
     "difficulty": "Easy"
   },
   {
+    "questionId": 3,
     "question": "What is the largest mammal on Earth?",
     "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 4,
     "question": "In which year did the Titanic sink?",
     "options": ["1910", "1912", "1920", "1930"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 5,
     "question": "Who wrote 'Romeo and Juliet'?",
     "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 6,
     "question": "What is the capital of Japan?",
     "options": ["Beijing", "Seoul", "Tokyo", "Bangkok"],
     "answer": "C",
     "difficulty": "Easy"
   },
   {
+    "questionId": 7,
     "question": "Which planet is known as the 'Red Planet'?",
     "options": ["Venus", "Mars", "Jupiter", "Saturn"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 8,
     "question": "What is the currency of Brazil?",
     "options": ["Euro", "Yen", "Dollar", "Real"],
     "answer": "D",
     "difficulty": "Medium"
   },
   {
+    "questionId": 9,
     "question": "Who discovered penicillin?",
     "options": ["Marie Curie", "Alexander Fleming", "Louis Pasteur", "Jonas Salk"],
     "answer": "B",
     "difficulty": "Medium"
   },
   {
+    "questionId": 10,
     "question": "Which element has the chemical symbol 'O'?",
     "options": ["Oxygen", "Osmium", "Oganesson", "Oberon"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 11,
     "question": "What is the largest desert in the world?",
     "options": ["Gobi Desert", "Sahara Desert", "Arabian Desert", "Antarctica"],
     "answer": "B",
     "difficulty": "Hard"
   },
   {
+    "questionId": 12,
     "question": "Who developed the theory of relativity?",
     "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
     "answer": "B",
     "difficulty": "Hard"
   },
   {
+    "questionId": 13,
     "question": "What is the speed of light?",
     "options": ["300,000 km/s", "500,000 km/s", "700,000 km/s", "900,000 km/s"],
     "answer": "A",
     "difficulty": "Hard"
   },
   {
+    "questionId": 14,
     "question": "Which is the longest river in the world?",
     "options": ["Nile", "Amazon", "Yangtze", "Mississippi"],
     "answer": "B",
     "difficulty": "Hard"
   },
   {
+    "questionId": 15,
     "question": "Who painted the Mona Lisa?",
     "options": ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
     "answer": "B",
     "difficulty": "Hard"
   },
   {
+    "questionId": 16,
     "question": "Which gas makes up the majority of Earth's atmosphere?",
     "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
     "answer": "B",
     "difficulty": "Medium"
   },
   {
+    "questionId": 17,
     "question": "Who wrote 'To Kill a Mockingbird'?",
     "options": ["Harper Lee", "Ernest Hemingway", "F. Scott Fitzgerald", "J.K. Rowling"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 18,
     "question": "What is the smallest prime number?",
     "options": ["1", "2", "3", "5"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 19,
     "question": "In which year did World War II end?",
     "options": ["1943", "1945", "1950", "1939"],
     "answer": "B",
     "difficulty": "Medium"
   },
   {
+    "questionId": 20,
     "question": "What is the chemical symbol for gold?",
     "options": ["Au", "Ag", "Fe", "Cu"],
     "answer": "A",
     "difficulty": "Easy"
   },
   {
+    "questionId": 21,
     "question": "Who wrote '1984'?",
     "options": ["George Orwell", "Aldous Huxley", "Ray Bradbury", "Philip K. Dick"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 22,
     "question": "Which planet is known as the 'Morning Star'?",
     "options": ["Venus", "Mars", "Mercury", "Jupiter"],
     "answer": "C",
     "difficulty": "Easy"
   },
   {
+    "questionId": 23,
     "question": "What is the powerhouse of the cell?",
     "options": ["Mitochondria", "Nucleus", "Endoplasmic Reticulum", "Golgi Apparatus"],
     "answer": "A",
     "difficulty": "Easy"
   },
   {
+    "questionId": 24,
     "question": "Who is the author of 'The Great Gatsby'?",
     "options": ["F. Scott Fitzgerald", "Ernest Hemingway", "Jane Austen", "Charles Dickens"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 25,
     "question": "What is the boiling point of water in Celsius?",
     "options": ["100°C", "0°C", "50°C", "-50°C"],
     "answer": "A",
     "difficulty": "Easy"
   },
   {
+    "questionId": 26,
     "question": "Which country is known as the 'Land of the Rising Sun'?",
     "options": ["China", "South Korea", "Japan", "Vietnam"],
     "answer": "C",
     "difficulty": "Medium"
   },
   {
+    "questionId": 27,
     "question": "Who is known as the 'Father of Computers'?",
     "options": ["Alan Turing", "Charles Babbage", "Ada Lovelace", "John von Neumann"],
     "answer": "B",
     "difficulty": "Hard"
   },
   {
+    "questionId": 28,
     "question": "Which ocean is the largest?",
     "options": ["Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Pacific Ocean"],
     "answer": "D",
     "difficulty": "Easy"
   },
   {
+    "questionId": 29,
     "question": "What is the capital of Australia?",
     "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
     "answer": "C",
     "difficulty": "Medium"
   },
   {
+    "questionId": 30,
     "question": "Who painted the 'Starry Night'?",
     "options": ["Claude Monet", "Vincent van Gogh", "Pablo Picasso", "Salvador Dalí"],
     "answer": "B",
     "difficulty": "Hard"
   },
   {
+    "questionId": 31,
     "question": "What is the speed of sound in air?",
     "options": ["340 m/s", "1500 m/s", "2200 m/s", "1000 m/s"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 32,
     "question": "Which metal is liquid at room temperature?",
     "options": ["Gold", "Mercury", "Aluminum", "Copper"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 33,
     "question": "What is the main ingredient in guacamole?",
     "options": ["Tomato", "Avocado", "Onion", "Lime"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 34,
     "question": "Who was the first woman to win a Nobel Prize?",
     "options": ["Marie Curie", "Rosalind Franklin", "Dorothy Crowfoot Hodgkin", "Barbara McClintock"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 35,
     "question": "Which language is widely spoken in Brazil?",
     "options": ["Spanish", "Portuguese", "Italian", "French"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 36,
     "question": "What is the smallest prime number?",
     "options": ["1", "2", "3", "5"],
     "answer": "B",
     "difficulty": "Easy"
   },
   {
+    "questionId": 37,
     "question": "Who developed the theory of evolution?",
     "options": ["Charles Darwin", "Alfred Russel Wallace", "Gregor Mendel", "Jean-Baptiste Lamarck"],
     "answer": "A",
     "difficulty": "Hard"
   },
   {
+    "questionId": 38,
     "question": "What is the largest planet in our solar system?",
     "options": ["Jupiter", "Saturn", "Neptune", "Earth"],
     "answer": "A",
     "difficulty": "Hard"
   },
   {
+    "questionId": 39,
     "question": "In which year did the Berlin Wall fall?",
     "options": ["1985", "1989", "1991", "1995"],
     "answer": "B",
     "difficulty": "Medium"
   },
   {
+    "questionId": 40,
     "question": "Who is the author of 'The Catcher in the Rye'?",
     "options": ["J.D. Salinger", "F. Scott Fitzgerald", "Ernest Hemingway", "Mark Twain"],
     "answer": "A",
     "difficulty": "Medium"
   },
   {
+    "questionId": 41,
     "question": "What is the process of a liquid turning into a gas?",
     "options": ["Condensation", "Evaporation", "Sublimation", "Melting"],
     "answer": "B",
     "difficulty": "Easy"
+  },
+  {
+    "questionId": 42,
+    "question": "Who is the current Prime Minister of Canada?",
+    "options": ["Justin Trudeau", "Stephen Harper", "Jean Chrétien", "Brian Mulroney"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "questionId": 43,
+    "question": "Which is the largest moon of Jupiter?",
+    "options": ["Ganymede", "Europa", "Io", "Callisto"],
+    "answer": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "questionId": 44,
+    "question": "What is the chemical symbol for silver?",
+    "options": ["Au", "Ag", "Fe", "Cu"],
+    "answer": "B",
+    "difficulty": "Easy"
+  },
+  {
+    "questionId": 45,
+    "question": "Who wrote 'The Odyssey'?",
+    "options": ["Homer", "Virgil", "Sophocles", "Euripides"],
+    "answer": "A",
+    "difficulty": "Hard"
+  },
+  {
+    "questionId": 46,
+    "question": "What is the largest bird in the world?",
+    "options": ["Ostrich", "Emu", "Albatross", "Pelican"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "questionId": 47,
+    "question": "In which year did the Renaissance begin?",
+    "options": ["1300", "1400", "1500", "1600"],
+    "answer": "C",
+    "difficulty": "Hard"
+  },
+  {
+    "questionId": 48,
+    "question": "What is the capital of South Korea?",
+    "options": ["Seoul", "Tokyo", "Beijing", "Bangkok"],
+    "answer": "A",
+    "difficulty": "Easy"
+  },
+  {
+    "questionId": 49,
+    "question": "Who wrote 'Pride and Prejudice'?",
+    "options": ["Jane Austen", "Charlotte Brontë", "Emily Brontë", "Charles Dickens"],
+    "answer": "A",
+    "difficulty": "Medium"
+  },
+  {
+    "questionId": 50,
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Jupiter", "Saturn", "Neptune", "Earth"],
+    "answer": "A",
+    "difficulty": "Hard"
   }
 ]
+  
+
 

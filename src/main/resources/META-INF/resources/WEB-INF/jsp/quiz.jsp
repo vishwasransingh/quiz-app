@@ -10,19 +10,19 @@
             <p class="lead">${questionNumber.index + 1}. ${question.question}</p>
 
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="answers[${questionNumber.index}]" value="A" id="optionA${questionNumber.index}">
+                <input class="form-check-input" type="radio" name="userSelectedAnswers[${questionNumber.index}]" value="A" id="optionA${questionNumber.index}">
                 <label class="form-check-label" for="optionA${questionNumber.index}">A. ${question.options[0]}</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="answers[${questionNumber.index}]" value="B" id="optionB${questionNumber.index}">
+                <input class="form-check-input" type="radio" name="userSelectedAnswers[${questionNumber.index}]" value="B" id="optionB${questionNumber.index}">
                 <label class="form-check-label" for="optionB${questionNumber.index}">B. ${question.options[1]}</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="answers[${questionNumber.index}]" value="C" id="optionC${questionNumber.index}">
+                <input class="form-check-input" type="radio" name="userSelectedAnswers[${questionNumber.index}]" value="C" id="optionC${questionNumber.index}">
                 <label class="form-check-label" for="optionC${questionNumber.index}">C. ${question.options[2]}</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="answers[${questionNumber.index}]" value="D" id="optionD${questionNumber.index}">
+                <input class="form-check-input" type="radio" name="userSelectedAnswers[${questionNumber.index}]" value="D" id="optionD${questionNumber.index}">
                 <label class="form-check-label" for="optionD${questionNumber.index}">D. ${question.options[3]}</label>
             </div>
         </div>

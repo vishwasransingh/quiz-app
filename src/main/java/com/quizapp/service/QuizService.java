@@ -25,18 +25,13 @@ import com.quizapp.model.TestResult;
 @Service
 public class QuizService {
 	
-	private static String currentQuizName;
 	private static List<Question> currentQuizList;
-	private static String currentQuizDifficulty;
 	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	@Autowired
 	QuizConfig quizConfig;
 
 	public List<Question> getQuiz(String quizName, String quizDifficulty, int numberOfQuestions) {
-		
-		currentQuizName = quizName;
-	    currentQuizDifficulty = quizDifficulty;
 
 	    try {
 	        ObjectMapper objectMapper = new ObjectMapper();
@@ -59,7 +54,9 @@ public class QuizService {
 	                .collect(Collectors.toList());
 
 	        currentQuizList = filteredQuestions;
-
+	        
+	        inputStream.close();
+	        
 	        return filteredQuestions;
 	    } catch (IOException e) {
 	        // Handle exceptions (cases: file not found, invalid JSON)
@@ -69,56 +66,45 @@ public class QuizService {
 	}
 	
 	public TestResult calculateResult(QuizForm quizForm) {
-		
-		List<Question> feedbackQuestions = new ArrayList<>();
-		
-		List<String> userSelectedAnswers = quizForm.getUserSelectedAnswers();
-		
-		if (userSelectedAnswers == null) {
-			
-			currentQuizList.stream().forEach(question -> question.setUserSelectedAnswer("No option was selected"));
-			
-			return new TestResult(0, currentQuizList.size(), 
-					0, 0, currentQuizList);
-		}
-		
-		Iterator<Question> currentQuizIterator = currentQuizList.iterator();
-		Iterator<String> userSelectedAnswersIterator = userSelectedAnswers.iterator();
-		
-		int countCorrect = 0;
-	    int countAttempted = 0;
-		
-		while (currentQuizIterator.hasNext()) {
-			Question currentQuestion = currentQuizIterator.next();
 
-			if (userSelectedAnswersIterator.hasNext()) {
-				++countAttempted;
-				String userSelectedAnswer = userSelectedAnswersIterator.next();
-				if (currentQuestion.getCorrectAnswer().equals(userSelectedAnswer)) {
-					++countCorrect;
-				}
-				else {
-					if (userSelectedAnswer == null) {
-						currentQuestion.setUserSelectedAnswer("No option was selected.");
-						
-					}
-					
-					currentQuestion.setUserSelectedAnswer(userSelectedAnswer);
-					feedbackQuestions.add(currentQuestion);
-				}
-			}
-			else {
-				currentQuestion.setUserSelectedAnswer("No option was selected.");
-				feedbackQuestions.add(currentQuestion);
-			}
-		}
-		
-		int totalQuestions = currentQuizList.size();
-		currentQuizList = null;
-		
-		return new TestResult(countAttempted, totalQuestions, 
-				countCorrect, countCorrect * 100 / totalQuestions, 
-				feedbackQuestions);
+	    List<Question> feedbackQuestions = new ArrayList<>();
+
+	    List<String> userSelectedAnswers = quizForm.getUserSelectedAnswers();
+
+	    if (userSelectedAnswers == null) {
+	        currentQuizList.forEach(question -> question.setUserSelectedAnswer("No option was selected"));
+	        return new TestResult(0, currentQuizList.size(), 0, 0, currentQuizList);
+	    }
+
+	    Iterator<Question> currentQuizIterator = currentQuizList.iterator();
+	    Iterator<String> userSelectedAnswersIterator = userSelectedAnswers.iterator();
+
+	    int countCorrect = 0;
+	    int countAttempted = 0;
+
+	    while (currentQuizIterator.hasNext()) {
+	        Question currentQuestion = currentQuizIterator.next();
+
+	        String userSelectedAnswer = userSelectedAnswersIterator.hasNext() ? userSelectedAnswersIterator.next() : null;
+	        if (userSelectedAnswer != null) {
+	            ++countAttempted;
+	        }
+
+	        if (currentQuestion.getCorrectAnswer().equals(userSelectedAnswer)) {
+	            ++countCorrect;
+	        } else {
+	            currentQuestion.setUserSelectedAnswer(userSelectedAnswer != null ? userSelectedAnswer : "No option was selected.");
+	            feedbackQuestions.add(currentQuestion);
+	        }
+	    }
+
+	    int totalQuestions = currentQuizList.size();
+	    currentQuizList = null;
+
+	    return new TestResult(countAttempted, totalQuestions,
+	            countCorrect, countCorrect * 100 / totalQuestions,
+	            feedbackQuestions);
 	}
+
 
 }

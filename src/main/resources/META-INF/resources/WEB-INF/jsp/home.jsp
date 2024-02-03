@@ -1,5 +1,5 @@
 <%@ include file="common/header.jspf" %>
-
+<%@ include file="common/navigation.jspf" %>
 <h1 class="mt-5">Quiz-Application Home</h1>
 <hr>
 

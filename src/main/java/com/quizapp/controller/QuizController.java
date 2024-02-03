@@ -12,10 +12,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.quizapp.model.Question;
 import com.quizapp.model.QuizForm;
+import com.quizapp.model.User;
+import com.quizapp.service.AuthService;
 import com.quizapp.service.QuizService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class QuizController {
@@ -27,9 +32,34 @@ public class QuizController {
 	@Autowired
 	QuizService quizService;
 	
+	@Autowired
+	AuthService authService;
+	
+//	@RequestMapping("/home")
+//	public String goToHomePage(HttpSession session, Model model) {
+//		User user = (User) session.getAttribute("user");
+//		try {
+//			if (user.getUserName() == null || user.getPassword() == null) {
+//				return "login";
+//			}
+//			else {
+//				return "home";
+//			}
+//		} catch (Exception e) {
+//			model.addAttribute("errorMessage", "Please try that with credentials.");
+//			return "login";
+//		}
+//	}
+	
 	@RequestMapping("/home")
-	public String goToHomePage() {
-		return "index";
+	public String goToHomePage(HttpSession session, RedirectAttributes redirectAttributes) {
+	    if (!authService.verifyAuth(session)) {
+	        session.invalidate();
+	        redirectAttributes.addFlashAttribute("errorMessage", "Please try that with credentials.");
+	        return "redirect:/login";
+	    }
+
+	    return "home";
 	}
 	
 	@GetMapping("/get-quiz")

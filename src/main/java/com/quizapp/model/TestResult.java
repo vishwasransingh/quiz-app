@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class TestResult {
+	private String userName;
 	private int attemptedQuestions;
 	private int totalQuestions;
 	private int correctAnswers;

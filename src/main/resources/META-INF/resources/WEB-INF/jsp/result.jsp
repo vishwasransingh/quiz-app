@@ -1,5 +1,7 @@
 <%@ include file="common/header.jspf" %>
 
+<%@ include file="common/navigation.jspf" %>
+
 <div class="container mt-5">
     <h2 class="mb-4">Quiz Result</h2>
     <hr>

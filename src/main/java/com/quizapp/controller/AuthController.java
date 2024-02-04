@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.quizapp.model.User;
 import com.quizapp.service.AuthService;
@@ -14,8 +13,6 @@ import com.quizapp.service.AuthService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-//@RequestMapping("/user")
-//@SessionAttributes("user")
 public class AuthController {
 	
 	@Autowired

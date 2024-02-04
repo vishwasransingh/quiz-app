@@ -16,9 +16,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.quizapp.model.Question;
 import com.quizapp.model.QuizForm;
+import com.quizapp.model.TestResult;
 import com.quizapp.model.User;
 import com.quizapp.service.AuthService;
 import com.quizapp.service.QuizService;
+import com.quizapp.utility.TestResultLogger;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -34,22 +36,6 @@ public class QuizController {
 	
 	@Autowired
 	AuthService authService;
-	
-//	@RequestMapping("/home")
-//	public String goToHomePage(HttpSession session, Model model) {
-//		User user = (User) session.getAttribute("user");
-//		try {
-//			if (user.getUserName() == null || user.getPassword() == null) {
-//				return "login";
-//			}
-//			else {
-//				return "home";
-//			}
-//		} catch (Exception e) {
-//			model.addAttribute("errorMessage", "Please try that with credentials.");
-//			return "login";
-//		}
-//	}
 	
 	@RequestMapping("/home")
 	public String goToHomePage(HttpSession session, RedirectAttributes redirectAttributes) {
@@ -76,8 +62,10 @@ public class QuizController {
 	}
 	
 	@PostMapping("/submit-test")
-    public String submitTest(@ModelAttribute("quizForm") QuizForm quizForm, Model model) {
-		model.addAttribute("testResult", quizService.calculateResult(quizForm));
+    public String submitTest(@ModelAttribute("quizForm") QuizForm quizForm, Model model, HttpSession session) {
+		TestResult testResult = quizService.calculateResult(quizForm, (User)session.getAttribute("user"));
+		TestResultLogger.logTestResult(testResult);
+		model.addAttribute("testResult", testResult);
         return "result";
     }
 	

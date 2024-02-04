@@ -8,8 +8,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -21,12 +19,13 @@ import com.quizapp.config.QuizConfig;
 import com.quizapp.model.Question;
 import com.quizapp.model.QuizForm;
 import com.quizapp.model.TestResult;
+import com.quizapp.model.User;
 
 @Service
 public class QuizService {
 	
 	private static List<Question> currentQuizList;
-	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+//	private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	
 	@Autowired
 	QuizConfig quizConfig;
@@ -65,7 +64,7 @@ public class QuizService {
 	    }
 	}
 	
-	public TestResult calculateResult(QuizForm quizForm) {
+	public TestResult calculateResult(QuizForm quizForm, User user) {
 
 	    List<Question> feedbackQuestions = new ArrayList<>();
 
@@ -73,7 +72,7 @@ public class QuizService {
 
 	    if (userSelectedAnswers == null) {
 	        currentQuizList.forEach(question -> question.setUserSelectedAnswer("No option was selected"));
-	        return new TestResult(0, currentQuizList.size(), 0, 0, currentQuizList);
+	        return new TestResult(user.getUserName(), 0, currentQuizList.size(), 0, 0, currentQuizList);
 	    }
 
 	    Iterator<Question> currentQuizIterator = currentQuizList.iterator();
@@ -101,7 +100,7 @@ public class QuizService {
 	    int totalQuestions = currentQuizList.size();
 	    currentQuizList = null;
 
-	    return new TestResult(countAttempted, totalQuestions,
+	    return new TestResult(null, countAttempted, totalQuestions,
 	            countCorrect, countCorrect * 100 / totalQuestions,
 	            feedbackQuestions);
 	}

@@ -63,6 +63,7 @@ public class QuizController {
 	
 	@PostMapping("/submit-test")
     public String submitTest(@ModelAttribute("quizForm") QuizForm quizForm, Model model, HttpSession session) {
+		System.out.println("UserName : " +  (User)session.getAttribute("user"));
 		TestResult testResult = quizService.calculateResult(quizForm, (User)session.getAttribute("user"));
 		TestResultLogger.logTestResult(testResult);
 		model.addAttribute("testResult", testResult);

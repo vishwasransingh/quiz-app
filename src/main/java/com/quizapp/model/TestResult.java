@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class TestResult {
 	private String userName;
 	private int attemptedQuestions;
